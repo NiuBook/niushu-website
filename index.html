@@ -11,6 +11,21 @@
     <div id="root"></div>
     <!-- 静态版本说明：由于原网站是 React 应用，直接克隆 JS/CSS 资源。
          联系方式将在 JS 加载后通过脚本进行替换，或直接在静态 HTML 中预置。 -->
+    <a href="https://work.weixin.qq.com/ca/cawcde4ad726f485db" target="_blank">添加微信</a>
+
+<style>
+  .btn-wechat {
+    background-color: #07c160;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+  }
+</style>
+<a href="https://work.weixin.qq.com/ca/cawcde4ad726f485db" class="btn-wechat" target="_blank">
+  联系牛书科技专家
+</a>
     <script>
         // 动态替换联系方式的脚本
         window.addEventListener('load', function() {
@@ -45,11 +60,11 @@
             const observer = new MutationObserver(replaceInfo);
             observer.observe(document.getElementById('root'), { childList: true, subtree: true });
         });
-        setTimeout(function() {
-    if(confirm("需要获取牛书科技的专业方案吗？点击确定联系专家")) {
-        window.open("https://work.weixin.qq.com/ca/cawcde4ad726f485db");
-    }
-}, 3000);
+//         setTimeout(function() {
+//     if(confirm("需要获取牛书科技的专业方案吗？点击确定联系专家")) {
+//         window.open("https://work.weixin.qq.com/ca/cawcde4ad726f485db");
+//     }
+// }, 3000);
     </script>
 </body>
 </html>
