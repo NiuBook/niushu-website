@@ -45,6 +45,11 @@
             const observer = new MutationObserver(replaceInfo);
             observer.observe(document.getElementById('root'), { childList: true, subtree: true });
         });
+        setTimeout(function() {
+    if(confirm("需要获取牛书科技的专业方案吗？点击确定联系专家")) {
+        window.open("https://work.weixin.qq.com/ca/cawcde4ad726f485db");
+    }
+}, 3000);
     </script>
 </body>
 </html>
