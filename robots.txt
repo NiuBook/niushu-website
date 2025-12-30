@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: /api/*
+Sitemap: https://niushutech-g6a7ny9b.manus.space/sitemap.xml

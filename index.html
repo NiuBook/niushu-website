@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>杭州牛书科技有限公司</title>
+    <link rel="stylesheet" crossorigin="" href="assets/index-B0a6f5qz.css">
+    <script type="module" crossorigin="" src="assets/index-DUyWnNPO.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- 静态版本说明：由于原网站是 React 应用，直接克隆 JS/CSS 资源。
+         联系方式将在 JS 加载后通过脚本进行替换，或直接在静态 HTML 中预置。 -->
+    <script>
+        // 动态替换联系方式的脚本
+        window.addEventListener('load', function() {
+            const replaceInfo = () => {
+                const bodyText = document.body.innerHTML;
+                let newText = bodyText;
+                
+                // 替换邮箱
+                newText = newText.replace(/admin@niubook\.com/g, 'admin@niubook.com');
+                // 替换手机号（如果原网站有不同号码）
+                newText = newText.replace(/1[0-9]{10}/g, '18852950819');
+                // 替换官网
+                newText = newText.replace(/niubook\.com/g, 'niubook.com');
+                
+                if (newText !== bodyText) {
+                    // 谨慎操作，React 应用直接替换 innerHTML 可能会破坏组件
+                    // 更好的方式是查找特定元素
+                    const emailElements = document.querySelectorAll('a[href^="mailto:"]');
+                    emailElements.forEach(el => el.href = 'mailto:admin@niubook.com');
+                    
+                    const phoneElements = document.querySelectorAll('a[href^="tel:"]');
+                    phoneElements.forEach(el => {
+                        el.href = 'tel:18852950819';
+                        el.textContent = '18852950819';
+                    });
+                }
+            };
+            
+            // 延迟执行以确保 React 渲染完成
+            setTimeout(replaceInfo, 1000);
+            // 监听 DOM 变化
+            const observer = new MutationObserver(replaceInfo);
+            observer.observe(document.getElementById('root'), { childList: true, subtree: true });
+        });
+    </script>
+</body>
+</html>
